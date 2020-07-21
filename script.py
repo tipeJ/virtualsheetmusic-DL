@@ -27,7 +27,7 @@ except:
 
 for i in range(1, int(pageCount) + 1):
     url = "https://media.virtualsheetmusic.com/imgprev/%s/%s/%s.svg" % (id, url_token, str(i))
-    print(url)
+    print("Downloading: %s" % i)
     hdr = {
         'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0"
     }
@@ -39,3 +39,5 @@ for i in range(1, int(pageCount) + 1):
     urllib.request.install_opener(opener)
     filename = "%s/sheet %s.svg" % (directory, str(i))
     urllib.request.urlretrieve(url, filename)
+    
+print("Downloads finished!")
